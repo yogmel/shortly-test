@@ -1,7 +1,6 @@
 .button {
   cursor: pointer;
   border: none;
-  font-weight: bold;
   font-size: 1.8rem;
   font-family: "Poppins", sans-serif;
   background-color: transparent;
@@ -21,6 +20,7 @@
 
 .link {
   color: var(--gray-violet);
+  font-weight: bold;
 
   &:hover {
     color: var(--darker-violet);

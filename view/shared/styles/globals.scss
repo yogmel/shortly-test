@@ -1,3 +1,5 @@
+@import "./constants.scss";
+
 * {
   box-sizing: border-box;
 }
@@ -32,4 +34,25 @@ a {
 
   /* colors for opacity */
   --cyanOpacity: 180, 66%, 49%;
+}
+
+/* fonts */
+h1,
+p {
+  margin: 0;
+}
+
+h1 {
+  line-height: 1.2;
+  @media (min-width: $desktop-breakpoint) {
+    font-size: 5rem;
+  }
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  @media (min-width: $desktop-breakpoint) {
+    line-height: 1.5;
+  }
 }

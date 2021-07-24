@@ -8,15 +8,18 @@ export enum ButtonType {
 
 interface ButtonProps {
   type: ButtonType;
+  className?: string;
   children: ReactNode;
 }
 
 export function Button(props: ButtonProps) {
-  const { type, children } = props;
+  const { type, className = "", children } = props;
 
   const style = buttonStyles[type];
 
   return (
-    <button className={`${buttonStyles.button} ${style}`}>{children}</button>
+    <button className={`${buttonStyles.button} ${style} ${className}`}>
+      {children}
+    </button>
   );
 }
