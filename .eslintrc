@@ -1,0 +1,3 @@
+{
+  "extends": ["next", "next/core-web-vitals", "next/no-html-link-for-pages", "next/no-img-element", "next/no-sync-scripts", "eslint-plugin-react", "eslint-plugin-react-hooks", "prettier"]
+}
