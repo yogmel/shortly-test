@@ -1,0 +1,113 @@
+@import "./../../styles/constants.scss";
+
+.logo {
+  @media screen and (min-width: $desktop-breakpoint) {
+    margin-top: 1rem;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 10;
+  @media screen and (min-width: $desktop-breakpoint) {
+    align-items: center;
+  }
+}
+
+.navMenu {
+  display: none;
+  @media screen and (min-width: $desktop-breakpoint) {
+    display: flex;
+    flex-basis: 100%;
+    margin: 0 1.5rem;
+  }
+}
+
+.navMenuActive {
+  display: block;
+  position: absolute;
+  top: 70px;
+  width: calc(100% - 4rem);
+  background: var(--dark-violet);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+
+  & > a {
+    margin: 1rem 0;
+    @media screen and (min-width: $desktop-breakpoint) {
+      margin: 0 1rem;
+    }
+
+    &:hover {
+      color: var(--darker-violet);
+    }
+
+    &:last-child {
+      margin-bottom: 2rem;
+      @media screen and (min-width: $desktop-breakpoint) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    color: var(--gray-violet);
+    flex-direction: row;
+  }
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--gray-violet);
+}
+
+.loginButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  @media screen and (min-width: $desktop-breakpoint) {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    flex-basis: 35%;
+  }
+
+  & > button {
+    margin: 1rem 0;
+    @media screen and (min-width: $desktop-breakpoint) {
+      margin: 0 2rem;
+      max-width: 15rem;
+    }
+  }
+}
+
+.mobileNavButton {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  @media screen and (min-width: $desktop-breakpoint) {
+    display: none;
+  }
+
+  & > span {
+    width: 2rem;
+    border: 2px solid var(--gray-violet);
+    margin: 2px;
+  }
+}

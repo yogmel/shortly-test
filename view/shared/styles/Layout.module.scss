@@ -1,0 +1,9 @@
+@import "./constants.scss";
+
+.grid {
+  padding: 2rem;
+  @media screen and (min-width: $desktop-breakpoint) {
+    max-width: 112rem;
+    margin: 0 auto;
+  }
+}
