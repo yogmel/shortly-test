@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React, { useCallback, useState } from "react";
 import Image from "next/image";
-import Logo from "./../assets/images/logo.svg";
+import Logo from "view/shared/assets/images/logo.svg";
 import navbarStyles from "./styles/Navbar.module.scss";
-import layoutStyles from "./../styles/Layout.module.scss";
+import layoutStyles from "view/shared/styles/Layout.module.scss";
 import { Button, ButtonType } from "./Button";
 
 export default function Navbar() {

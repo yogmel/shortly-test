@@ -1,8 +1,8 @@
 import Image from "next/image";
-import HeaderImage from "./../../shared/assets/images/illustration-working.svg";
+import HeaderImage from "view/shared/assets/images/illustration-working.svg";
 import headerStyles from "../styles/Header.module.scss";
-import layoutStyles from "./../../shared/styles/Layout.module.scss";
-import { Button, ButtonType } from "../../shared";
+import layoutStyles from "view/shared/styles/Layout.module.scss";
+import { Button, ButtonType } from "view/shared";
 import React from "react";
 
 export default function Header() {

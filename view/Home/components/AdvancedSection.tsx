@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import RecognitionIcon from "./../../shared/assets/images/icon-brand-recognition.svg";
-import RecordsIcon from "./../../shared/assets/images/icon-detailed-records.svg";
-import CustomizableIcon from "./../../shared/assets/images/icon-fully-customizable.svg";
+import RecognitionIcon from "view/shared/assets/images/icon-brand-recognition.svg";
+import RecordsIcon from "view/shared/assets/images/icon-detailed-records.svg";
+import CustomizableIcon from "view/shared/assets/images/icon-fully-customizable.svg";
 
 export default function AdvancedSection() {
   return (

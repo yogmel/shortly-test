@@ -1,11 +1,11 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import Logo from "./../assets/images/logo.svg";
-import FacebookIcon from "./../assets/images/icon-facebook.svg";
-import TwitterIcon from "./../assets/images/icon-twitter.svg";
-import PinterestIcon from "./../assets/images/icon-pinterest.svg";
-import InstagramIcon from "./../assets/images/icon-instagram.svg";
+import Logo from "view/shared/assets/images/logo.svg";
+import FacebookIcon from "view/shared/assets/images/icon-facebook.svg";
+import TwitterIcon from "view/shared/assets/images/icon-twitter.svg";
+import PinterestIcon from "view/shared/assets/images/icon-pinterest.svg";
+import InstagramIcon from "view/shared/assets/images/icon-instagram.svg";
 
 export default function Footer() {
   return (
