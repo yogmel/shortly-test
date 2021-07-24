@@ -3,6 +3,7 @@ import buttonStyles from "./styles/Button.module.scss";
 
 export enum ButtonType {
   Primary = "primary",
+  Secondary = "secondary",
   Link = "link",
 }
 

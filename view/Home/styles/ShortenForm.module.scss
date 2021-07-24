@@ -1,0 +1,39 @@
+@import "view/shared/styles/constants.scss";
+
+.form {
+  background: url(./../../shared/assets/images/bg-shorten-mobile.svg)
+    var(--dark-violet) no-repeat right top;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 1rem;
+
+  & > * {
+    margin: 1rem;
+  }
+
+  @media (min-width: $desktop-breakpoint) {
+    background: url(./../../shared/assets/images/bg-shorten-desktop.svg)
+      var(--dark-violet) no-repeat right top;
+    flex-direction: row;
+    padding: 3rem;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+
+  &::placeholder {
+    color: var(--red);
+  }
+}
+
+.submit {
+  @media (min-width: $desktop-breakpoint) {
+    flex-basis: 20rem;
+  }
+}
