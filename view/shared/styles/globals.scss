@@ -45,6 +45,7 @@ input {
 
 /* fonts */
 h1,
+h2,
 p {
   margin: 0;
 }
@@ -54,6 +55,13 @@ h2,
 h3,
 h4 {
   color: var(--darker-violet);
+}
+
+h1.inverted,
+h2.inverted,
+h3.inverted,
+h4.inverted {
+  color: var(--white);
 }
 
 h1 {
