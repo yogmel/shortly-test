@@ -2,17 +2,21 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Button, ButtonType } from "view/shared";
 import shortenFormStyles from "../styles/ShortenForm.module.scss";
 import layoutStyles from "view/shared/styles/Layout.module.scss";
-import { ShortenLinkViewModel } from "viewmodel";
+import { ShortenlinkViewModel } from "viewmodel";
 import { observer } from "mobx-react";
 import Loader from "view/shared/components/Loader";
 
 interface ShortFormProps {
-  viewModel: ShortenLinkViewModel;
+  viewModel: ShortenlinkViewModel;
 }
 
 function ShortenForm(props: ShortFormProps) {
   const {
-    viewModel: { error: requestError, loading, generateShortLink },
+    viewModel: {
+      error: requestError,
+      loading,
+      generateShortlink: generateShortLink,
+    },
   } = props;
 
   const [link, setLink] = useState("");

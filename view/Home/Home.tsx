@@ -1,7 +1,7 @@
 import { observer } from "mobx-react";
 import React, { useMemo } from "react";
 import dynamic from "next/dynamic";
-import { ShortenLinkViewModel } from "viewmodel";
+import { ShortenlinkViewModel } from "viewmodel";
 import { Navbar } from "../shared/components";
 import {
   AdvancedSection,
@@ -16,7 +16,7 @@ const Footer = dynamic(() => import("./../shared/components/Footer"), {
 });
 
 function Home() {
-  const shortenLinkViewModel = useMemo(() => new ShortenLinkViewModel(), []);
+  const shortenLinkViewModel = useMemo(() => new ShortenlinkViewModel(), []);
 
   return (
     <>
@@ -25,7 +25,7 @@ function Home() {
       <Header />
       <main>
         <ShortenForm viewModel={shortenLinkViewModel} />
-        <ShortenFormEntries shortlinks={shortenLinkViewModel.shortlinks} />
+        <ShortenFormEntries viewModel={shortenLinkViewModel} />
         <AdvancedSection />
         <BoostLinkSection />
       </main>

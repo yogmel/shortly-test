@@ -1,16 +1,23 @@
 import { observer } from "mobx-react";
 import { Shortlink } from "model";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./../styles/ShortenFormEntry.module.scss";
 import layoutStyles from "view/shared/styles/Layout.module.scss";
 import ShortenFormEntry from "./ShortenFormEntry";
+import { ShortenlinkViewModel } from "viewmodel";
 
 interface ShortenFormLink {
-  shortlinks: Shortlink[];
+  viewModel: ShortenlinkViewModel;
 }
 
 function ShortenFormEntries(props: ShortenFormLink) {
-  const { shortlinks } = props;
+  const {
+    viewModel: { shortlinks, loadCachedData },
+  } = props;
+
+  useEffect(() => {
+    loadCachedData();
+  }, [loadCachedData]);
 
   return (
     <section className={styles.section}>
