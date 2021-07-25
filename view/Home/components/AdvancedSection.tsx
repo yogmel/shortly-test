@@ -1,52 +1,30 @@
 import Image from "next/image";
 
-import RecognitionIcon from "view/shared/assets/images/icon-brand-recognition.svg";
-import RecordsIcon from "view/shared/assets/images/icon-detailed-records.svg";
-import CustomizableIcon from "view/shared/assets/images/icon-fully-customizable.svg";
+import advancedSectionSyles from "../styles/AdvancedSection.module.scss";
+import layoutStyles from "view/shared/styles/Layout.module.scss";
+import { advancedSectionData } from "model/data";
 
 export default function AdvancedSection() {
   return (
-    <section>
-      <div>
+    <section className={advancedSectionSyles.section}>
+      <div className={layoutStyles.grid}>
         <h2>Advanced Statistics</h2>
-        <p>
+        <p className="subtitle">
           Track how your links are performing across the web with our advanced
           statistics dashboard
         </p>
 
-        <div>
-          <div>
-            <Image src={RecognitionIcon} alt="icon: chart bars going up" />
-            <h3>Brand Recognition</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ea
-              deserunt soluta laboriosam cupiditate dolorum voluptas vero!
-            </p>
-          </div>
-
-          <div>
-            <Image
-              src={RecordsIcon}
-              alt="icon: round meter pointing at the middle"
-            />
-            <h3>Detailed Records</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ea
-              deserunt soluta laboriosam cupiditate dolorum voluptas vero!
-            </p>
-          </div>
-
-          <div>
-            <Image
-              src={CustomizableIcon}
-              alt="icon: shows a set of three drawing tools"
-            />
-            <h3>Fully Customizable</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ea
-              deserunt soluta laboriosam cupiditate dolorum voluptas vero!
-            </p>
-          </div>
+        <div className={advancedSectionSyles.cards}>
+          {advancedSectionData.map((data) => (
+            <div className={advancedSectionSyles.card}>
+              <div className={advancedSectionSyles.cardIcon}>
+                <Image src={data.icon.src} alt={data.icon.alt} />
+              </div>
+              <h3>{data.title}</h3>
+              <p className="subtitle">{data.description}</p>
+            </div>
+          ))}
+          <div className={advancedSectionSyles.timeline}></div>
         </div>
       </div>
     </section>

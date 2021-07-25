@@ -39,12 +39,21 @@ input {
 
   /* colors for opacity */
   --cyanOpacity: 180, 66%, 49%;
+  --grayOpacity: 0, 0%, 75%;
+  --grayVioletOpacity: 257, 7%, 63%;
 }
 
 /* fonts */
 h1,
 p {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--darker-violet);
 }
 
 h1 {
@@ -60,4 +69,8 @@ p {
   @media (min-width: $desktop-breakpoint) {
     line-height: 1.5;
   }
+}
+
+.subtitle {
+  color: var(--gray-violet);
 }

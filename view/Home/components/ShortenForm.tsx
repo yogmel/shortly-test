@@ -5,20 +5,22 @@ import layoutStyles from "view/shared/styles/Layout.module.scss";
 
 export default function ShortenForm() {
   return (
-    <section className={layoutStyles.grid}>
-      <form className={shortenFormStyles.form}>
-        <input
-          type="text"
-          placeholder="Shorten a link here..."
-          className={shortenFormStyles.input}
-        />
-        <Button
-          type={ButtonType.Secondary}
-          className={shortenFormStyles.submit}
-        >
-          Shorten it!
-        </Button>
-      </form>
+    <section className={shortenFormStyles.section}>
+      <div className={layoutStyles.grid}>
+        <form className={shortenFormStyles.form}>
+          <input
+            type="text"
+            placeholder="Shorten a link here..."
+            className={shortenFormStyles.input}
+          />
+          <Button
+            type={ButtonType.Secondary}
+            className={shortenFormStyles.submit}
+          >
+            Shorten it!
+          </Button>
+        </form>
+      </div>
     </section>
   );
 }

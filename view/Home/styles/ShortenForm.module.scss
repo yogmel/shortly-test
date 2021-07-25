@@ -1,5 +1,13 @@
 @import "view/shared/styles/constants.scss";
 
+.section {
+  background: linear-gradient(
+    180deg,
+    transparent 50%,
+    hsla(var(--grayVioletOpacity), 0.2) 50%
+  );
+}
+
 .form {
   background: url(./../../shared/assets/images/bg-shorten-mobile.svg)
     var(--dark-violet) no-repeat right top;

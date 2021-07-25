@@ -1,0 +1,72 @@
+@import "view/shared/styles/constants.scss";
+
+.section {
+  background-color: hsla(var(--grayVioletOpacity), 0.2);
+  text-align: center;
+}
+
+.cards {
+  position: relative;
+  @media (min-width: $desktop-breakpoint) {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.card {
+  position: relative;
+  background: var(--white);
+  padding: 6rem 4rem 5rem;
+  border-radius: 0.5rem;
+  margin: 10rem 0;
+  @media (min-width: $desktop-breakpoint) {
+    margin: 10rem 1rem;
+    text-align: left;
+
+    &:nth-child(2) {
+      margin-top: 15rem;
+    }
+
+    &:nth-child(3) {
+      margin-top: 20rem;
+    }
+  }
+}
+
+.cardIcon {
+  background-color: var(--dark-violet);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  padding: 2rem;
+  margin: 0 auto;
+  border-radius: 6rem;
+  position: absolute;
+  top: -5rem;
+  right: 50%;
+  transform: translateX(50%);
+  @media (min-width: $desktop-breakpoint) {
+    left: -20px;
+    margin: 0;
+  }
+}
+
+.timeline {
+  background: var(--cyan);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1rem;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: -1;
+  @media (min-width: $desktop-breakpoint) {
+    width: 90%;
+    height: 1rem;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(50%);
+  }
+}
