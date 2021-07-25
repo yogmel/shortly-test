@@ -26,6 +26,11 @@ input {
   font-size: 1.6rem;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 :root {
   /* colors */
   --white: white;
@@ -46,6 +51,8 @@ input {
 /* fonts */
 h1,
 h2,
+h3,
+h4,
 p {
   margin: 0;
 }
