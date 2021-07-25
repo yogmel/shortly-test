@@ -29,15 +29,36 @@
   }
 }
 
-.input {
+.inputContainer {
+  position: relative;
   width: 100%;
   padding: 1rem;
+}
+
+.input {
   border-radius: 0.5rem;
   border: none;
+  width: 100%;
+  padding: 1rem;
+}
+
+.inputError {
+  border-radius: 0.5rem;
+  border: none;
+  width: 100%;
+  padding: 1rem;
 
   &::placeholder {
     color: var(--red);
   }
+}
+
+.error {
+  color: var(--red);
+  font-size: 1.4rem;
+  position: absolute;
+  bottom: -2rem;
+  left: 1rem;
 }
 
 .submit {

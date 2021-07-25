@@ -9,20 +9,34 @@ export enum ButtonType {
 
 interface ButtonProps {
   type: ButtonType;
+  active?: boolean;
   disabled?: boolean;
   className?: string;
   children: ReactNode;
+  onClick?: () => void;
 }
 
 export function Button(props: ButtonProps) {
-  const { type, className = "", disabled = false, children } = props;
+  const {
+    type,
+    className = "",
+    active = false,
+    disabled = false,
+    onClick,
+    children,
+  } = props;
+
+  const styleActive = active ? buttonStyles[type + "Active"] : "";
 
   const style = buttonStyles[type];
 
   return (
     <button
-      className={`${buttonStyles.button} ${style} ${className}`}
+      className={`${buttonStyles.button} ${styleActive} ${
+        active ? "active" : ""
+      } ${style} ${className}`}
       disabled={disabled}
+      onClick={onClick}
     >
       {children}
     </button>

@@ -9,36 +9,49 @@
   font-weight: bold;
 }
 
-.primary {
+.button[disabled],
+.button[disabled]:hover {
+  cursor: initial;
+  opacity: 0.5;
+  background-color: var(--gray);
+}
+
+.primary,
+.secondary {
   background-color: var(--cyan);
   color: var(--white);
   width: 100%;
+  @media (min-width: $desktop-breakpoint) {
+    font-weight: lighter;
+  }
+}
+
+.primary {
   padding: 1.2rem 0;
   border-radius: 3rem;
 
   &:hover {
     background-color: hsla(var(--cyanOpacity), 0.5);
   }
-
-  @media (min-width: $desktop-breakpoint) {
-    font-weight: lighter;
-  }
 }
 
 .secondary {
-  background-color: var(--cyan);
-  color: var(--white);
-  width: 100%;
   padding: 0.8rem 0;
   border-radius: 0.8rem;
 
   &:hover {
     background-color: hsla(var(--cyanOpacity), 0.5);
   }
+}
 
-  @media (min-width: $desktop-breakpoint) {
-    font-weight: lighter;
-  }
+.primaryActive,
+.secondaryActive {
+  background-color: var(--dark-violet);
+}
+
+.primaryActive:hover,
+.secondaryActive:hover {
+  background-color: hsla(var(--darkVioletOpacity), 0.5);
 }
 
 .link {

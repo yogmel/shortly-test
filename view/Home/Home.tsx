@@ -8,7 +8,7 @@ import {
   BoostLinkSection,
   Header,
   ShortenForm,
-  ShortenFormEntry,
+  ShortenFormEntries,
 } from "./components";
 
 const Footer = dynamic(() => import("./../shared/components/Footer"), {
@@ -25,7 +25,7 @@ function Home() {
       <Header />
       <main>
         <ShortenForm viewModel={shortenLinkViewModel} />
-        <ShortenFormEntry shortlinks={shortenLinkViewModel.shortlinks} />
+        <ShortenFormEntries shortlinks={shortenLinkViewModel.shortlinks} />
         <AdvancedSection />
         <BoostLinkSection />
       </main>
