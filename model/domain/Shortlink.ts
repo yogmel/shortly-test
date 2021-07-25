@@ -25,13 +25,6 @@ export interface Error {
   message: string;
 }
 
-export interface ShortlinkDTO {
-  code: string;
-  originalUrl: string;
-  shortUrl: string;
-  error?: Error;
-}
-
 export class Shortlink {
   code: string = "";
   originalUrl: string = "";

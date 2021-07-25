@@ -21,21 +21,16 @@ export default function Navbar() {
         </a>
       </Link>
 
-      <button
-        className={navbarStyles.mobileNavButton}
-        onClick={toggleMobileMenu}
-      >
+      <button className={navbarStyles.mobileButton} onClick={toggleMobileMenu}>
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <div
-        className={
-          mobileMenuOpen ? navbarStyles.navMenuActive : navbarStyles.navMenu
-        }
+        className={mobileMenuOpen ? navbarStyles.menuActive : navbarStyles.menu}
       >
-        <nav className={navbarStyles.navLinks}>
+        <nav className={navbarStyles.links}>
           <Link href="/">
             <a>Features</a>
           </Link>
@@ -49,7 +44,7 @@ export default function Navbar() {
 
         <hr className={navbarStyles.divider} />
 
-        <div className={navbarStyles.loginButtons}>
+        <div className={navbarStyles.loginContainer}>
           <Button type={ButtonType.Link}>Login</Button>
           <Button type={ButtonType.Primary}>Sign up</Button>
         </div>

@@ -59,6 +59,7 @@ function ShortenForm(props: ShortFormProps) {
             />
             {error && <span className={shortenFormStyles.error}>{error}</span>}
           </div>
+
           <Button
             type={ButtonType.Secondary}
             className={shortenFormStyles.submit}

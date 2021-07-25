@@ -1,5 +1,5 @@
 import { observer } from "mobx-react";
-import React, { useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 import dynamic from "next/dynamic";
 import { ShortenLinkViewModel } from "viewmodel";
 import { Navbar } from "../shared/components";

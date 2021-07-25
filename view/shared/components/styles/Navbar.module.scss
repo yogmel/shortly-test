@@ -1,11 +1,5 @@
 @import "view/shared/styles/constants.scss";
 
-.logo {
-  @media (min-width: $desktop-breakpoint) {
-    margin-top: 1rem;
-  }
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -17,7 +11,31 @@
   }
 }
 
-.navMenu {
+.logo {
+  @media (min-width: $desktop-breakpoint) {
+    margin-top: 1rem;
+  }
+}
+
+.mobileButton {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  @media (min-width: $desktop-breakpoint) {
+    display: none;
+  }
+
+  & > span {
+    width: 2rem;
+    border: 2px solid var(--gray-violet);
+    margin: 2px;
+  }
+}
+
+.menu {
   display: none;
   @media (min-width: $desktop-breakpoint) {
     display: flex;
@@ -26,7 +44,7 @@
   }
 }
 
-.navMenuActive {
+.menuActive {
   display: block;
   position: absolute;
   top: 70px;
@@ -36,7 +54,7 @@
   padding: 2rem;
 }
 
-.navLinks {
+.links {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,7 +90,7 @@
   border-top: 1px solid var(--gray-violet);
 }
 
-.loginButtons {
+.loginContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,23 +109,5 @@
       margin: 0 2rem;
       max-width: 15rem;
     }
-  }
-}
-
-.mobileNavButton {
-  background: none;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
-  @media (min-width: $desktop-breakpoint) {
-    display: none;
-  }
-
-  & > span {
-    width: 2rem;
-    border: 2px solid var(--gray-violet);
-    margin: 2px;
   }
 }

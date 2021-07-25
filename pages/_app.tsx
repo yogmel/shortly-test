@@ -1,4 +1,4 @@
-import "../view/shared/styles/globals.scss";
+import "view/shared/styles/globals.scss";
 import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {

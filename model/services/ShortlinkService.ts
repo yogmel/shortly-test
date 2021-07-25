@@ -12,21 +12,19 @@ export class ShortlinkService {
       `https://api.shrtco.de/v2/shorten?url=${url}`
     ).then((data) => data.json());
 
-    if (!isError(shortlinkData)) {
-      const shortlink = {
-        code: shortlinkData.result.code,
-        originalUrl: shortlinkData.result.original_link,
-        shortUrl: shortlinkData.result.full_short_link,
-      };
-      return new Shortlink(shortlink);
+    if (isError(shortlinkData)) {
+      return new Shortlink({
+        error: {
+          code: shortlinkData.error_code,
+          message: shortlinkData.error,
+        },
+      });
     }
 
-    const shortlink = {
-      error: {
-        code: shortlinkData.error_code,
-        message: shortlinkData.error,
-      },
-    };
-    return new Shortlink(shortlink);
+    return new Shortlink({
+      code: shortlinkData.result.code,
+      originalUrl: shortlinkData.result.original_link,
+      shortUrl: shortlinkData.result.full_short_link,
+    });
   }
 }

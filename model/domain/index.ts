@@ -1,1 +1,1 @@
-export * from './Shortlink';
+export * from "./Shortlink";

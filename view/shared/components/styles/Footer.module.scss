@@ -45,6 +45,10 @@
   line-height: 2;
   color: var(--gray);
   margin-bottom: 4rem;
+
+  & > :hover {
+    color: var(--cyan);
+  }
 }
 
 .socialLinksContainer {

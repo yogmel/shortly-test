@@ -16,6 +16,7 @@
     "semi": [
         "warn",
         "always"
-    ]
+    ],
+    "react/no-unescaped-entities": "off"
   }
 }
