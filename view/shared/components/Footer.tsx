@@ -17,11 +17,11 @@ export default function Footer() {
 
         <nav className={footerStyles.nav}>
           {navData?.map((data) => (
-            <div className={footerStyles.navLinksContainer}>
+            <div key={data.title} className={footerStyles.navLinksContainer}>
               <h4 className="inverted">{data.title}</h4>
               <ul className={footerStyles.navLinks}>
                 {data.links.map((link) => (
-                  <li>
+                  <li key={link.display}>
                     <Link href={link.url}>
                       <a>{link.display}</a>
                     </Link>
@@ -34,10 +34,12 @@ export default function Footer() {
 
         <div className={footerStyles.socialLinksContainer}>
           <ul className={footerStyles.socialLinks}>
-            {socialData?.map((data) => (
-              <li>
-                <Link href={data.url}>
-                  <Image src={data.icon.src} alt={data.icon.alt} />
+            {socialData?.map((data, index) => (
+              <li key={index}>
+                <Link href={data.url} passHref>
+                  <a>
+                    <Image src={data.icon.src} alt={data.icon.alt} />
+                  </a>
                 </Link>
               </li>
             ))}

@@ -16,7 +16,7 @@ export default function AdvancedSection() {
 
         <div className={advancedSectionSyles.cards}>
           {advancedSectionData.map((data) => (
-            <div className={advancedSectionSyles.card}>
+            <div key={data.title} className={advancedSectionSyles.card}>
               <div className={advancedSectionSyles.cardIcon}>
                 <Image src={data.icon.src} alt={data.icon.alt} />
               </div>

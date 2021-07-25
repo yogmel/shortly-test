@@ -1,20 +1,31 @@
-import React from "react";
-import { Navbar, Footer } from "../shared/components";
+import { observer } from "mobx-react";
+import React, { useEffect, useMemo } from "react";
+import dynamic from "next/dynamic";
+import { ShortenLinkViewModel } from "viewmodel";
+import { Navbar } from "../shared/components";
 import {
   AdvancedSection,
   BoostLinkSection,
   Header,
   ShortenForm,
+  ShortenFormEntry,
 } from "./components";
 
-export default function Home() {
+const Footer = dynamic(() => import("./../shared/components/Footer"), {
+  ssr: false,
+});
+
+function Home() {
+  const shortenLinkViewModel = useMemo(() => new ShortenLinkViewModel(), []);
+
   return (
     <>
       <Navbar />
 
       <Header />
       <main>
-        <ShortenForm />
+        <ShortenForm viewModel={shortenLinkViewModel} />
+        <ShortenFormEntry shortlinks={shortenLinkViewModel.shortlinks} />
         <AdvancedSection />
         <BoostLinkSection />
       </main>
@@ -23,3 +34,5 @@ export default function Home() {
     </>
   );
 }
+
+export default observer(Home);
