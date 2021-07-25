@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import advancedSectionSyles from "../styles/AdvancedSection.module.scss";
 import layoutStyles from "view/shared/styles/Layout.module.scss";
-import { advancedSectionData } from "model/data";
+import { advancedSectionData } from "view/shared/data";
 
 export default function AdvancedSection() {
   return (
