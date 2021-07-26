@@ -22,6 +22,7 @@ Adding up to the required NextJS and Typescript, there were some other technolog
 - MobX and MobX React: used to create a connection between View and ViewModel via observables and observer.
 - Sass / Scss: the CSS preprocessor was chosen to take advantage of their nesting properties, mixins and constants.
 - CSS Modules: the main way of styling. It was my first time using it, so there might have a lot of room to change.
+- Jest and React Testing Library: used for component testing (both), model and viewmodel logic (Jest).
 
 ---
 
@@ -65,3 +66,15 @@ The `shared` directory contains:
 - `components`: components that are meant to be used in not a specific page
 - `data`: view specific data, such as section texts and router links
 - `styles`: general and global styles
+
+---
+
+### Future improvements
+
+- Add more view tests
+- Add try/catch for failed requests
+- Evaluate accessibility
+- Check for performance improvements
+- Check better way to handle svg (for testing)
+- Refactor scss and shared components
+- Use (de)serialization library
