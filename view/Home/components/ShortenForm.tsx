@@ -60,6 +60,7 @@ function ShortenForm(props: ShortFormProps) {
               }
               onChange={onChange}
               disabled={loading}
+              value={link}
             />
             {error && <span className={shortenFormStyles.error}>{error}</span>}
           </div>

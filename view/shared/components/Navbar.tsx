@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Logo from "view/shared/assets/images/logo.svg";
 import navbarStyles from "./styles/Navbar.module.scss";
@@ -8,6 +8,18 @@ import { Button, ButtonType } from "./Button";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      const { innerWidth: width } = window;
+      if (width > 800) {
+        setMobileMenuOpen(false);
+      }
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleMobileMenu = useCallback(() => {
     setMobileMenuOpen(!mobileMenuOpen);
