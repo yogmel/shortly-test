@@ -1,46 +1,67 @@
-### Objective
+# Shortly
 
-Using TypeScript and NextJS, your challenge is to build out a URL shortening web app, integrate with the [shrtcode API](https://app.shrtco.de/docs), and get it looking as close to the design as possible.
+## Introduction
 
-### Brief
+A Next + Typescript project, which provides a way for users to shorten a valid URL. It is a responsive web app.
 
-URL shortening is a technique on the Web in which a Uniform Resource Locator (URL) may be made substantially shorter and still direct to the required page. This is achieved by using a redirect that links to the web page that has a long URL. For example, the URL "https://example.com/assets/category_B/subcategory_C/Foo/" can be shortened to "https://example.com/Foo", and the URL "http://example.com/about/index.html" can be shortened to "https://goo.gl/aO3Ssc ".
+Some of its features are:
 
-Your challenge is to build out this landing page, integrate with the [shrtcode API](https://app.shrtco.de/docs) and get it looking as close to the design as possible.
+- Get a short link from the Shrcode API;
+- Check for empty values and handle erros coming from the API;
+- Automatically copies short link when button "Copy" is clicked;
+- List every URL requested;
+- Persist the list of short links, so it still there after a page refresh;
+- Feedback a loader when requests take to long to finish.
 
-Your users should be able to:
+---
 
--   View the optimal layout for the site depending on their device's screen size
--   Shorten any valid URL
--   See a list of their shortened links, even after refreshing the browser
--   Copy the shortened link to their clipboard in a single click
--   Receive an error message when the `form` is submitted if:
-    -   The `input` field is empty
+## Technologies
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design to work to along with active states.
+Adding up to the required NextJS and Typescript, there were some other technologies and libraries used:
 
-You will find all the required assets in the `/images` folder. The assets are already optimized. The designs are in JPG static format. This will mean that you'll need to use your best judgment for styles such as `font-size`, `padding`, and `margin`.
+- MobX and MobX React: used to create a connection between View and ViewModel via observables and observer.
+- Sass / Scss: the CSS preprocessor was chosen to take advantage of their nesting properties, mixins and constants.
+- CSS Modules: the main way of styling. It was my first time using it, so there might have a lot of room to change.
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+---
 
-### Evaluation Criteria
+## Architecture and layers
 
--   **TypeScript** best practices
--   Show us your work through your commit history
--   We're looking for you to produce working code, with enough room to demonstrate how to structure components in a small program
--   Completeness: did you complete the features?
--   Correctness: does the functionality act in sensible, thought-out ways?
--   Maintainability: is it written in a clean, maintainable way?
--   Testing: is the system adequately tested?
+This project uses the MVVM architecture. There are three layers:
 
-### Deliverables
+- Model: domain level, domain interfaces and specifications, services (for api communication). It is independant and it communicates with the View Model layer.
+- View Model: it is a connection between the Model and the View. It contains business logic and it can update the Model and notify the View.
+- View: the presentation layer that contains React components. It communicates with the View Model to get data.
 
-Make sure to include all source code in the repository.
+They have their own folders (`model`, `viewmodel` and `view`).
 
-### CodeSubmit
+Apart from them, we also have, in the `root`:
 
-Please organize, design, test, and document your code as if it were going into production - then push your changes to the master branch. After you have pushed your code, you may submit the assignment on the assignment page.
+- `design`: visual UI of the project to be used as a reference
+- `pages`: NextJS pages. There are some hidden pages to set up meta data and import fonts
+- `public`: stores favicon
 
-**Have fun building!** 🚀
+### Model
 
-The finn GmbH Team
+The model holds the domain of the project and the service required to get information from the API. It currently does not use any robust serializer library.
+
+The domain contains interfaces and classes that map the data from the request, so the View Model knows how to manipulate it.
+
+The service has only one method which makes a GET request to the Shrcode API. It receives and map the data to match the domain's `Shortlink`.
+
+### ViewModel
+
+There is currently only one ViewModel, called `ShortenLinkViewModel`, which handles the system states (shortlinks, loading and error). It is an observable (using `makeAutoObservable()` MobX method).
+
+As an additional functionality, it stores and retrieves data from LocalStorage to pesist data in the user's browser.
+
+### View
+
+Its root directory holds the `Home` folder, which can be interpret as a page content. Inside, the `components` folder contains the building parts of the page and the `styles` folder contains all components `.scss` files.
+
+The `shared` directory contains:
+
+- `assets`: images used in the project
+- `components`: components that are meant to be used in not a specific page
+- `data`: view specific data, such as section texts and router links
+- `styles`: general and global styles
