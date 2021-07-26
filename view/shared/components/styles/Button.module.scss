@@ -1,4 +1,5 @@
 @import "view/shared/styles/constants.scss";
+@import "view/shared/styles/mixins.scss";
 
 .button {
   cursor: pointer;
@@ -27,6 +28,7 @@
 .primary {
   padding: 1.2rem 0;
   border-radius: 3rem;
+  @include link-transition;
 
   &:hover {
     background-color: hsla(var(--cyanOpacity), 0.5);
@@ -36,6 +38,7 @@
 .secondary {
   padding: 0.8rem 0;
   border-radius: 0.8rem;
+  @include link-transition;
 
   &:hover {
     background-color: hsla(var(--cyanOpacity), 0.5);
@@ -45,6 +48,7 @@
 .primaryActive,
 .secondaryActive {
   background-color: var(--dark-violet);
+  @include link-transition;
 }
 
 .primaryActive:hover,
@@ -54,6 +58,7 @@
 
 .link {
   color: var(--gray-violet);
+  @include link-transition;
 
   &:hover {
     color: var(--darker-violet);
