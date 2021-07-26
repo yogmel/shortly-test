@@ -20,7 +20,7 @@ export interface ShortlinkResponse {
   result: ShortlinkSuccessResponse;
 }
 
-export interface Error {
+export interface ErrorData {
   code: number;
   message: string;
 }
@@ -29,13 +29,13 @@ export class Shortlink {
   code: string = "";
   originalUrl: string = "";
   shortUrl: string = "";
-  error?: Error;
+  error?: ErrorData;
 
   constructor(data: Partial<Shortlink>) {
     Object.assign(this, data);
   }
 
-  copy(data: Partial<Shortlink>) {
+  copy(data?: Partial<Shortlink>) {
     return Object.assign(this, data);
   }
 }

@@ -1,10 +1,10 @@
 import { makeAutoObservable } from "mobx";
-import { Shortlink, ShortlinkService, Error } from "model";
+import { Shortlink, ShortlinkService, ErrorData } from "model";
 
 export class ShortenlinkViewModel {
   private _shortlinks: Shortlink[] = [];
   private _loading: boolean = false;
-  private _error: Error | undefined;
+  private _error: ErrorData | undefined;
 
   constructor(
     private readonly shortlinkService: ShortlinkService = new ShortlinkService()
@@ -24,15 +24,15 @@ export class ShortenlinkViewModel {
     return this._error;
   }
 
-  setLoading(value: boolean) {
+  setLoading = (value: boolean) => {
     this._loading = value;
-  }
+  };
 
   setShortlinks(value: Shortlink[]) {
     this._shortlinks = value;
   }
 
-  setError(value: Error | undefined) {
+  setError(value: ErrorData | undefined) {
     this._error = value;
   }
 

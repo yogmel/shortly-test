@@ -12,11 +12,7 @@ interface ShortFormProps {
 
 function ShortenForm(props: ShortFormProps) {
   const {
-    viewModel: {
-      error: requestError,
-      loading,
-      generateShortlink: generateShortLink,
-    },
+    viewModel: { error: requestError, loading, generateShortlink },
   } = props;
 
   const [link, setLink] = useState("");
@@ -37,14 +33,14 @@ function ShortenForm(props: ShortFormProps) {
       e.preventDefault();
       setError("");
       if (link) {
-        generateShortLink(link);
+        generateShortlink(link);
         setLink("");
       }
       if (!link) {
         setError("Please add a link");
       }
     },
-    [generateShortLink, link]
+    [generateShortlink, link]
   );
 
   return (

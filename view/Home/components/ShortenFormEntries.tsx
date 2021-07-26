@@ -1,6 +1,5 @@
 import { observer } from "mobx-react";
-import { Shortlink } from "model";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from "./../styles/ShortenFormEntry.module.scss";
 import layoutStyles from "view/shared/styles/Layout.module.scss";
 import ShortenFormEntry from "./ShortenFormEntry";

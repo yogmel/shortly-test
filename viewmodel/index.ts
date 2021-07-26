@@ -1,1 +1,1 @@
-export * from "./ShortenLinkViewModel";
+export * from "./ShortenlinkViewModel";

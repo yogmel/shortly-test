@@ -16,7 +16,7 @@ const Footer = dynamic(() => import("./../shared/components/Footer"), {
 });
 
 function Home() {
-  const shortenLinkViewModel = useMemo(() => new ShortenlinkViewModel(), []);
+  const shortenlinkViewModel = useMemo(() => new ShortenlinkViewModel(), []);
 
   return (
     <>
@@ -24,8 +24,8 @@ function Home() {
 
       <Header />
       <main>
-        <ShortenForm viewModel={shortenLinkViewModel} />
-        <ShortenFormEntries viewModel={shortenLinkViewModel} />
+        <ShortenForm viewModel={shortenlinkViewModel} />
+        <ShortenFormEntries viewModel={shortenlinkViewModel} />
         <AdvancedSection />
         <BoostLinkSection />
       </main>
